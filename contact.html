@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - TerraPottery Ceramic Workshop</title>
+    <meta
+      name="description"
+      content="Get in touch with TerraPottery. Visit our workshop in Jaipur or contact us for custom ceramic art pieces, pottery classes, and collaboration opportunities."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <a href="index.html" class="logo">
+            <img
+              src="img/logo.svg"
+              alt="TerraPottery logo"
+              width="150"
+              height="40"
+            />
+          </a>
+          <nav class="nav">
+            <button class="burger" aria-label="Open menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <ul class="nav__list">
+              <li><a href="index.html" class="nav__link">Home</a></li>
+              <li>
+                <a href="contact.html" class="nav__link active">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="contact">
+        <div class="container">
+          <h1>Let's Create Together</h1>
+          <div class="contact__content">
+            <div class="contact__info">
+              <h2>Visit Our Workshop</h2>
+              <address class="contact__details">
+                <div class="contact__item">
+                  <svg class="icon" width="24" height="24">
+                    <use href="img/icons.svg#location"></use>
+                  </svg>
+                  <a
+                    href="https://maps.app.goo.gl/3uGSs3pe9WfCmcFN7"
+                    target="_blank"
+                  >
+                    293, Telephone Nagar, Indore, Madhya Pradesh 452010, India
+                  </a>
+                </div>
+                <div class="contact__item">
+                  <svg class="icon" width="24" height="24">
+                    <use href="img/icons.svg#phone"></use>
+                  </svg>
+                  <a href="tel:+919301239144">+91 93012-39144</a>
+                </div>
+                <div class="contact__item">
+                  <svg class="icon" width="24" height="24">
+                    <use href="img/icons.svg#email"></use>
+                  </svg>
+                  <a href="mailto:TerraPottery@gmail.com"
+                    >TerraPottery@gmail.com</a
+                  >
+                </div>
+              </address>
+              <div class="contact__map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d857.7455990515871!2d75.8969201813545!3d22.722297799999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd3491829787%3A0x3f5d6418ac261268!2zMjkzLCBUZWxlcGhvbmUgTmFnYXIsIEluZG9yZSwgTWFkaHlhIFByYWRlc2ggNDUyMDEwLCDQmNC90LTQuNGP!5e1!3m2!1sru!2sru!4v1737127614938!5m2!1sru!2sru"
+                  width="600"
+                  height="450"
+                  style="border: 0"
+                  allowfullscreen=""
+                  
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+            <div class="contact__form">
+              <h2>Send Us a Message</h2>
+              <form action="thanks_form.php" method="POST">
+                <div class="form__group">
+                  <label for="name">Your Name</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+                <div class="form__group">
+                  <label for="email">Your Email</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form__group">
+                  <label for="message">Your Message</label>
+                  <textarea id="message" name="message" required></textarea>
+                </div>
+                <div class="form__group form__group--checkbox">
+                  <input
+                    type="checkbox"
+                    id="privacy"
+                    name="privacy"
+                    value="on"
+                    required
+                  />
+                  <label for="privacy"
+                    >I accept
+                    <a href="privacy-policy.html">Privacy Policy</a></label
+                  >
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__logo">
+            <img
+              src="img/logo-white.svg"
+              alt="TerraPottery logo"
+              width="150"
+              height="40"
+            />
+          </div>
+          <nav class="footer__nav">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <address class="footer__contact">
+            <a href="https://maps.app.goo.gl/3uGSs3pe9WfCmcFN7" target="_blank"
+              >293, Telephone Nagar, Indore, Madhya Pradesh 452010, India</a
+            >
+            <a href="tel:+919301239144">+91 93012-39144</a>
+            <a href="mailto:TerraPottery@gmail.com">TerraPottery@gmail.com</a>
+          </address>
+          <div class="footer__social">
+						<ul class="footer__social-list">
+								<li>
+										<a href="index.html#gallery" class="footer__social-link">
+												<svg width="24" height="24">
+														<use href="img/icons.svg#handmade"></use>
+												</svg>
+										</a>
+								</li>
+								<li>
+										<a href="index.html#products" class="footer__social-link">
+												<svg width="24" height="24">
+														<use href="img/icons.svg#custom"></use>
+												</svg>
+										</a>
+								</li>
+								<li>
+										<a href="index.html#process" class="footer__social-link">
+												<svg width="24" height="24">
+														<use href="img/icons.svg#quality"></use>
+												</svg>
+										</a>
+								</li>
+						</ul>
+				</div>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__bottom-content">
+            <p>&copy; 2024 TerraPottery. All rights reserved.</p>
+            <div class="footer__links">
+              <a href="privacy-policy.html">Privacy Policy</a>
+              <a href="terms-conditions.html">Terms & Conditions</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
