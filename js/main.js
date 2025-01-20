@@ -166,4 +166,107 @@ if (slider) {
     // Pause auto slide when hovering over slider
     slider.addEventListener('mouseenter', stopAutoSlide);
     slider.addEventListener('mouseleave', startAutoSlide);
-} 
+}
+
+// Testimonials Slider
+class TestimonialsSlider {
+    constructor() {
+        this.slider = document.querySelector('.testimonials__slider');
+        if (!this.slider) return;
+
+        this.track = this.slider.querySelector('.testimonials__track');
+        this.slides = this.slider.querySelectorAll('.testimonial__slide');
+        this.dotsContainer = this.slider.querySelector('.testimonials__dots');
+        this.prevBtn = this.slider.querySelector('.testimonials__btn--prev');
+        this.nextBtn = this.slider.querySelector('.testimonials__btn--next');
+        
+        this.currentSlide = 0;
+        this.slidesCount = this.slides.length;
+        
+        this.init();
+    }
+    
+    init() {
+        // Create dots
+        this.slides.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.className = `testimonials__dot${index === 0 ? ' active' : ''}`;
+            dot.setAttribute('aria-label', `Перейти к отзыву ${index + 1}`);
+            this.dotsContainer.appendChild(dot);
+            
+            dot.addEventListener('click', () => this.goToSlide(index));
+        });
+        
+        // Add button listeners
+        this.prevBtn.addEventListener('click', () => this.prevSlide());
+        this.nextBtn.addEventListener('click', () => this.nextSlide());
+        
+        // Update slide positions
+        this.updateSlidePositions();
+    }
+    
+    updateSlidePositions() {
+        this.track.style.transform = `translateX(-${this.currentSlide * 100}%)`;
+        
+        // Update dots
+        const dots = this.dotsContainer.querySelectorAll('.testimonials__dot');
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === this.currentSlide);
+        });
+    }
+    
+    goToSlide(index) {
+        this.currentSlide = index;
+        this.updateSlidePositions();
+    }
+    
+    prevSlide() {
+        this.currentSlide = (this.currentSlide - 1 + this.slidesCount) % this.slidesCount;
+        this.updateSlidePositions();
+    }
+    
+    nextSlide() {
+        this.currentSlide = (this.currentSlide + 1) % this.slidesCount;
+        this.updateSlidePositions();
+    }
+}
+
+// Tabs functionality
+class Tabs {
+    constructor() {
+        this.tabsContainer = document.querySelector('.tabs');
+        if (!this.tabsContainer) return;
+
+        this.tabBtns = this.tabsContainer.querySelectorAll('.tabs__btn');
+        this.tabPanes = this.tabsContainer.querySelectorAll('.tabs__pane');
+        
+        this.init();
+    }
+    
+    init() {
+        this.tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.dataset.tab;
+                this.switchTab(tabId);
+            });
+        });
+    }
+    
+    switchTab(tabId) {
+        // Update buttons
+        this.tabBtns.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.tab === tabId);
+        });
+        
+        // Update panes
+        this.tabPanes.forEach(pane => {
+            pane.classList.toggle('active', pane.id === tabId);
+        });
+    }
+}
+
+// Initialize components
+document.addEventListener('DOMContentLoaded', () => {
+    new TestimonialsSlider();
+    new Tabs();
+}); 
