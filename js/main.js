@@ -265,8 +265,44 @@ class Tabs {
     }
 }
 
+// Numbers Animation
+function animateNumbers() {
+    const numbers = document.querySelectorAll('.stats__number');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const targetNumber = parseInt(target.getAttribute('data-number'));
+                target.classList.add('animate');
+                
+                let currentNumber = 0;
+                const duration = 2000; // 2 seconds
+                const steps = 60;
+                const increment = targetNumber / steps;
+                const stepTime = duration / steps;
+                
+                const counter = setInterval(() => {
+                    currentNumber += increment;
+                    if (currentNumber >= targetNumber) {
+                        target.textContent = targetNumber.toLocaleString() + '+';
+                        clearInterval(counter);
+                    } else {
+                        target.textContent = Math.floor(currentNumber).toLocaleString();
+                    }
+                }, stepTime);
+                
+                observer.unobserve(target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    numbers.forEach(number => observer.observe(number));
+}
+
 // Initialize components
 document.addEventListener('DOMContentLoaded', () => {
     new TestimonialsSlider();
     new Tabs();
+    animateNumbers();
 }); 
