@@ -192,7 +192,7 @@ ul {
     position: relative;
     display: flex;
     align-items: center;
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('../img/hero.jpg') top/cover;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('../img/hero.webp') top/cover;
     color: white;
     text-align: center;
     padding-top: var(--header-height);
